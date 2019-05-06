@@ -1,0 +1,8 @@
+<h1><%=@event.name%></h1>
+<p><%=@event.description%></p>
+<p>Start at : <%=@event.start_at%></p> <!--start_at.to_s(:short) or(:long) to sdsplay shorter timeformat-->
+<p>Location : <%=@event.location%></p>
+<p>Price : <%=format_price(@event)%></p>
+<%=link_to "cancel", events_path%>
+<%=link_to "edit", edit_event_path(@event)%>
+<%=link_to "delete",@event, method: :delete, data: { confirm: "Are you sure"}%> <!-- :method => :delete ,data: {confirm: "ask user blah blah"}-->
