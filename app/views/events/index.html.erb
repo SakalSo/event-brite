@@ -1,11 +1,14 @@
 <h1><%=pluralize(@events.size,"Event")%></h1>
 <%=link_to "New Event", new_event_path%>
 <%@events.each do |event| %>
+  <!--<img src="<%=%>" alt="">-->
   <h1><%=event.name%></h1>
   <p><%=truncate(event.description,length: 20)%></p>
   <p>Start at : <%=event.start_at%></p>
   <p>Location : <%=event.location%></p>
+  <p>Seat left : <%=spots(event)%></p>
   <p>Price : <%=format_price(event)%></p>
+  <%=link_to "New Registration",new_event_registration_path(event) %>
   <%=link_to "Show detail", event%>
   <%=link_to "edit", edit_event_path(event)%>
 <%end%>

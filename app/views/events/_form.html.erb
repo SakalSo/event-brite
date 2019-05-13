@@ -5,15 +5,21 @@
 
   <label>Price</label>
   <%=form.number_field :price%><br><br>
-  
+
   <label>Starts At</label>
   <%=form.datetime_field :start_at%><br><br>
 
   <label>Location</label>
   <%=form.text_field :location%><br><br>
 
+  <label>Capacity</label>
+  <%=form.number_field :capacity%><br><br>
+
   <label>Description</label>
   <%=form.text_area :description%><br><br>
+
+  <%=form.file_field :image%> <br><br>
+
   <%=form.submit%>
   <%=link_to "cancel", events_path%>
 <%end%>

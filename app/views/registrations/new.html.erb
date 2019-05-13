@@ -1,0 +1,16 @@
+<h1>Registration</h1>
+<%=form_for([@event,@registration]) do |form|%>
+
+<label>Name</label>
+<%=form.text_field :name%><br><br>
+
+<label>Email</label>
+<%=form.email_field :email%><br><br>
+
+<label>how_heard</label>
+<%=form.select :how_heard,Registration::SELECT_HOW_HEARD_OPTION%><br><br>
+
+<%=form.submit%>
+<%=link_to "cancel", events_path%>
+
+<%end%>

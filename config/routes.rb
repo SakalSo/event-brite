@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   #get "events/:id/edit" => "events#edit"
   #patch "events/:id" => "events#update" # for receiving update submition
   #post "event"
-  resources :events
+  root "events#index" #set events as homepage
+  resources :events do
+    resources :registrations # to nest route so the URL would be simpler
+  end
 end
