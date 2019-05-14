@@ -1,6 +1,8 @@
 <!--partial - kinda like function for for html -->
 <%= form_for @event do |form|%>
   <label>Name</label>
+  <%=render "shared/error_message"%>
+
   <%=form.text_field :name%><br><br>
 
   <label>Price</label>
